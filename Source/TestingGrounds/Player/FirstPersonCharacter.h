@@ -37,12 +37,17 @@ public:
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category=Camera)
 	float BaseLookUpRate;
 
+	UPROPERTY(EditDefaultsOnly, Category = "Setup")
+	TSubclassOf<class AGun> GunBlueprint;
+
+private:
+	AGun* Gun;
 	
 protected:
 	
 	
 	/** Resets HMD orientation and position in VR. */
-	void OnResetVR();
+	//void OnResetVR();
 
 	/** Handles moving forward/backward */
 	void MoveForward(float Val);
@@ -62,6 +67,7 @@ protected:
 	 */
 	void LookUpAtRate(float Rate);
 
+	/*
 	struct TouchData
 	{
 		TouchData() { bIsPressed = false;Location=FVector::ZeroVector;}
@@ -74,7 +80,7 @@ protected:
 	void EndTouch(const ETouchIndex::Type FingerIndex, const FVector Location);
 	void TouchUpdate(const ETouchIndex::Type FingerIndex, const FVector Location);
 	TouchData	TouchItem;
-	
+*/
 protected:
 	// APawn interface
 	virtual void SetupPlayerInputComponent(UInputComponent* InputComponent) override;
@@ -86,7 +92,7 @@ protected:
 	 * @param	InputComponent	The input component pointer to bind controls to
 	 * @returns true if touch controls were enabled.
 	 */
-	bool EnableTouchscreenMovement(UInputComponent* InputComponent);
+	//bool EnableTouchscreenMovement(UInputComponent* InputComponent);
 
 public:
 	/** Returns Mesh1P subobject **/
