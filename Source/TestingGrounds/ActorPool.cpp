@@ -29,5 +29,6 @@ void UActorPool::Return(AActor* ActorToReturn)
 
 void UActorPool::Add(AActor* ActorToAdd)
 {
+	UE_LOG(LogTemp, Warning, TEXT("Actor Added to poll: {%s}"), *ActorToAdd->GetName());
 	Pool.Push(ActorToAdd);
 }
